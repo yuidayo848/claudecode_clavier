@@ -6,6 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
+# trigger rebuild
   build:
     runs-on: ubuntu-latest
     container:
@@ -16,6 +17,8 @@ jobs:
           - shield: clavier_left
             board: seeeduino_xiao_ble
           - shield: clavier_right
+            board: seeeduino_xiao_ble
+          - shield: settings_reset
             board: seeeduino_xiao_ble
 
     steps:

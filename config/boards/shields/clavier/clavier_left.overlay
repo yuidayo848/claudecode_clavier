@@ -1,22 +1,30 @@
 /*
  * Clavier 左手側オーバーレイ
- * - BLE Central（親機：PC接続・無線マスター）
- * - 4行×5列 (合計20キー)
- * 💡 このファイルの極意：
- * ────────────────────────────────────────────────────────────────────────
- * 1. zmk,kscan = &kscan0; を chosen ノードで宣言することで、このファイルが
- * 左手側のキースキャン設定であることをマイコンに伝えます。
- * 2. 下記のピンアサインは、左手側の基板配線と1対1で対応しています。
- * 3. SPI設定（トラックボール用）は、親機である左手側でのみ有効化します。
- * ────────────────────────────────────────────────────────────────────────
+ * - BLE Central（主役、PCに無線接続するスター）
+ * - トラックボール（PMW3610）付き、4行×5列のキーマトリクス
+ *
+ * ピン割り当て（回路図より）:
+ *   キーマトリクス Row: P0.03, P0.29, P0.10(NFC2), P1.12
+ *   キーマトリクス Col: P1.15, P1.11, P1.14, P1.13, P0.28
+ *   PMW3610 SDIO(MOSI/MISO): P0.04
+ *   PMW3610 SCLK:            P0.05
+ *   PMW3610 CS:              P0.09 (NFC1ピン → NFCT_PINS_AS_GPIOSで解放)
+ *   PMW3610 MOTION/IRQ:      P0.02
+ *
+ * 右手側の P0.04(Col4)、P0.02(Col5)、P0.05(Row2) は別チップのため競合なし。
  */
+
 #include "clavier.dtsi"
 
 / {
-    /* ⚡ 親機（左手）の役割宣言 */
     chosen {
         zmk,kscan = &kscan0;
         zmk,pointing = &trackball;
+    };
+
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
     };
 
     kscan0: kscan {
@@ -24,15 +32,13 @@
         wakeup-source;
         diode-direction = "col2row";
 
-        /* 回路図準拠のRowピンアサイン */
         row-gpios
             = <&gpio0 3  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row0: P0.03 */
             , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row1: P0.29 */
-            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row2: P0.10 */
+            , <&gpio0 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row2: P0.10 (NFC2 → NFCT_PINS_AS_GPIOSで解放) */
             , <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>   /* Row3: P1.12 */
             ;
 
-        /* 回路図準拠のColピンアサイン */
         col-gpios
             = <&gpio1 15 GPIO_ACTIVE_HIGH>   /* Col0: P1.15 */
             , <&gpio1 11 GPIO_ACTIVE_HIGH>   /* Col1: P1.11 */
@@ -43,13 +49,13 @@
     };
 };
 
-/* トラックボール制御のためのSPIピン設定 */
+/* PMW3610 用 SPI2 ピン設定 */
 &pinctrl {
     spi2_default: spi2_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,
-                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(SPIM_SCK,  0, 5)>,   /* SCLK:  P0.05 */
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,   /* SDIO:  P0.04 (PMW3610は3線SPI) */
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;   /* SDIO:  P0.04 (MOSI/MISO共有) */
         };
     };
     spi2_sleep: spi2_sleep {
@@ -68,18 +74,19 @@
     pinctrl-0 = <&spi2_default>;
     pinctrl-1 = <&spi2_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;   /* CS: P0.09 (NFC1ピン) */
 
     trackball: pmw3610@0 {
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;   /* MOTION: P0.02 */
         automouse-layer = <3>;
     };
 };
 
-/* GPIOとしてピンを使用するため不要な機能を無効化 */
+/* UARTを無効化してP1.11/P1.12をキーマトリクスに開放 */
 &uart0 {
     status = "disabled";
 };
+
