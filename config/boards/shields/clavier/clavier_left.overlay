@@ -20,6 +20,7 @@
     chosen {
         zmk,kscan = &kscan0;
         zmk,pointing = &trackball;
+        zephyr,console = &cdc_acm_uart0;
     };
 
     kscan0: kscan {
@@ -83,4 +84,11 @@
 /* UARTを無効化してP1.11/P1.12をキーマトリクスに開放 */
 &uart0 {
     status = "disabled";
+};
+
+/* USB CDC ACM UARTをデバッグログ用に追加 */
+&usbd {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
 };
