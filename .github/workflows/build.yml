@@ -18,6 +18,8 @@ jobs:
             board: seeeduino_xiao_ble
           - shield: clavier_right
             board: seeeduino_xiao_ble
+          - shield: settings_reset
+            board: seeeduino_xiao_ble
 
     steps:
       - name: Checkout
