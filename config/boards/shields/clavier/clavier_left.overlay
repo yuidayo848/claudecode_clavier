@@ -23,6 +23,11 @@
         zephyr,console = &cdc_acm_uart0;
     };
 
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
