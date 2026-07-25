@@ -35,7 +35,7 @@
 
         raise_layer {
             bindings = <
-                &kp LS(N5)  &kp CARET  &kp BSLH  &kp LS(N6)  &kp AT  &kp KP_MINUS  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none  &kp TILDE  &kp MINUS  &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE  &none  &kp DQT  &kp EXCL  &kp QMARK  &kp LBKT  &kp RBKT  &kp LS(MINUS)  &kp N1  &kp N2  &kp N3  &kp LS(INT3)  &none  &kp SQT  &kp SEMI  &kp COLON  &none  &none  &none  &none  &none  &none  &none  &none
+                &kp LS(N5)  &kp CARET  &kp INT3  &kp LS(N6)  &kp LBKT  &kp KP_MINUS  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none  &kp LS(EQUAL)  &kp MINUS  &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE  &none  &kp LS(N2)  &kp EXCL  &kp QMARK  &kp RBKT  &kp RBKT  &kp LS(MINUS)  &kp N1  &kp N2  &kp N3  &kp LS(INT3)  &none  &kp LS(N7)  &kp SEMI  &kp SQT  &none  &none  &none  &none  &none  &none  &none  &none
             >;
         };
 
