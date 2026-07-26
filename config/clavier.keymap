@@ -24,7 +24,7 @@
 
         default_layer {
             bindings = <
-                &kp ESC  &mt LALT Q  &kp W  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp EQUAL  &kp TAB  &mt LSHFT TAB  &kp A  &kp E  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp P  &kp ENTER  &kp LCTRL  &kp S  &kp D  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp FSLH  &kp DOT  &kp LALT  &kp Z  &kp X  &kp C  &lt 2 INT5  &lt 3 SPACE  &mt LSHFT INT4  &kp BSPC  &kp DEL  &kp LBKT  &kp LS(INT1)  &kp 2
+                &kp ESC  &mt LALT Q  &kp W  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp MINUS  &kp LALT  &mt LSHFT TAB  &kp A  &kp E  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp P  &kp ENTER  &kp LCTRL  &kp S  &kp D  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp FSLH  &kp DOT  &kp TAB  &kp Z  &kp X  &kp C  &lt 2 INT5  &lt 3 SPACE  &mt LSHFT INT4  &kp BSPC  &kp DEL  &kp LBKT  &kp LS(INT1)  &kp PSCRN
             >;
         };
 
@@ -36,13 +36,13 @@
 
         raise_layer {
             bindings = <
-                &kp LS(N5)  &kp EQUAL  &kp INT3  &kp LS(N6)  &kp LBKT  &kp KP_MINUS  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none  &kp LS(EQUAL)  &kp MINUS  &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE  &none  &kp LS(N2)  &kp EXCL  &kp QMARK  &kp RBKT  &kp BSLH  &kp LS(MINUS)  &kp N1  &kp N2  &kp N3  &kp LS(INT1)  &none  &kp LS(N7)  &kp SEMI  &kp SQT  &none  &none  &none  &none  &none  &none  &none  &none
+                &kp LS(N5)  &kp EQUAL  &kp INT3  &kp LS(N6)  &kp LBKT  &kp KP_MINUS  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none  &kp LS(EQUAL)  &kp MINUS  &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE  &none  &kp LS(N2)  &kp EXCL  &kp QMARK  &kp RBKT  &kp BSLH  &kp LS(MINUS)  &kp N1  &kp N2  &kp N3  &kp LS(INT1)  &none  &kp LS(N7)  &kp SEMI  &kp SQT  &none  &none  &none  &kp N0  &kp DOT  &none  &none  &none
             >;
         };
 
         mouse_layer {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp UP  &kp END  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PG_UP  &trans  &kp PG_DN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &kp BSPC  &kp DEL  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &kp HOME  &kp UP  &kp END  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp PG_UP  &trans  &kp PG_DN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &kp DEL  &trans  &trans  &trans  &trans
             >;
         };
 
