@@ -17,6 +17,8 @@
 #define SCROLL 5
 #define LAYER_6 6
 #define LAYER_7 7
+#define LAYER_8 8
+#define LAYER_9 9
 
 / {
     keymap {
@@ -24,25 +26,25 @@
 
         default_layer {
             bindings = <
-                &kp ESC  &mt LALT Q  &kp W  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp MINUS  &kp LALT  &mt LSHFT TAB  &kp A  &kp E  &kp F  &kp G  &kp H  &kp J  &kp K  &lt 4 L  &kp P  &kp ENTER  &kp LCTRL  &kp S  &kp D  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp FSLH  &kp DOT  &kp TAB  &kp Z  &kp X  &kp C  &lt 2 INT5  &lt 3 SPACE  &mt LSHFT INT4  &kp BSPC  &kp DEL  &kp LBKT  &kp LS(INT1)  &kp PSCRN
+                &kp ESC  &mt LALT Q  &kp W  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp MINUS  &kp LALT  &mt LSHFT TAB  &kp A  &kp E  &kp F  &kp G  &kp H  &kp J  &kp K  &lt 4 L  &kp P  &kp ENTER  &kp LCTRL  &kp S  &kp D  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp FSLH  &kp DOT  &kp TAB  &kp Z  &kp X  &kp C  &lt 2 INT5  &lt 3 SPACE  &mt LSHFT INT4  &kp BSPC  &kp DEL  &kp LBKT  &kp LS(INT1)  &lt 6 PSCRN
             >;
         };
 
         lower_layer {
             bindings = <
-                &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &mkp MCLK  &mkp RCLK  &none  &none  &none  &none  &none  &none  &none  &none  &kp LCTRL  &mkp LCLK  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp LSHFT  &mo 5  &none  &none  &none  &none  &none  &none  &trans  &none
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &mo 5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
         raise_layer {
             bindings = <
-                &kp LS(N5)  &kp EQUAL  &kp INT3  &kp LS(N6)  &kp LBKT  &kp KP_MINUS  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &none  &kp LS(EQUAL)  &kp MINUS  &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE  &none  &kp LS(N2)  &kp EXCL  &kp QMARK  &kp RBKT  &kp BSLH  &kp LS(MINUS)  &kp N1  &kp N2  &kp N3  &kp LS(INT1)  &none  &kp LS(N7)  &kp SEMI  &kp SQT  &none  &none  &none  &kp N0  &kp DOT  &none  &none  &none
+                &kp LS(N5)  &kp EQUAL  &kp INT3  &kp LS(N6)  &kp LBKT  &kp KP_MINUS  &kp N7  &kp N8  &kp N9  &kp KP_MULTIPLY  &trans  &kp LS(EQUAL)  &kp MINUS  &kp LS(N4)  &kp LS(N8)  &kp LS(N9)  &kp KP_PLUS  &kp N4  &kp N5  &kp N6  &kp KP_DIVIDE  &trans  &kp LS(N2)  &kp EXCL  &kp QMARK  &kp RBKT  &kp BSLH  &kp LS(MINUS)  &kp N1  &kp N2  &kp N3  &kp LS(INT1)  &trans  &kp LS(N7)  &kp SEMI  &kp SQT  &trans  &trans  &trans  &kp N0  &kp DOT  &trans  &trans  &trans
             >;
         };
 
         mouse_layer {
             bindings = <
-                &trans  &trans  &trans  &trans  &kp LG(UP)  &trans  &kp HOME  &kp UP  &kp END  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &kp LS(LG(RIGHT))  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(DOWN)  &trans  &kp PG_UP  &trans  &kp PG_DN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &kp DEL  &trans  &trans  &trans  &trans
+                &kp F2  &kp F4  &kp F5  &trans  &kp LG(UP)  &trans  &kp HOME  &kp UP  &kp END  &trans  &trans  &trans  &trans  &kp F8  &kp LCTRL  &kp LS(LG(RIGHT))  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(DOWN)  &trans  &kp PG_UP  &trans  &kp PG_DN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &kp DEL  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -60,11 +62,23 @@
 
         layer6_layer {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp K_MUTE  &kp K_VOL_DN  &kp K_VOL_UP  &trans  &trans  &trans
             >;
         };
 
         layer7_layer {
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer8_layer {
+            bindings = <
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer9_layer {
             bindings = <
                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
