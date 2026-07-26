@@ -7,6 +7,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
 
 #define DEFAULT 0
 #define MOUSE 1
@@ -29,7 +30,7 @@
 
         lower_layer {
             bindings = <
-                &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &trans  &none
+                &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &none  &mkp MCLK  &mkp RCLK  &none  &none  &none  &none  &none  &none  &none  &none  &kp LCTRL  &mkp LCLK  &none  &none  &none  &none  &none  &none  &none  &none  &none  &kp LSHFT  &mo 5  &none  &none  &none  &none  &none  &none  &trans  &none
             >;
         };
 
