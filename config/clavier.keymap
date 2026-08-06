@@ -32,7 +32,7 @@
 
         lower_layer {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &mo 5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &kp LA(LEFT)  &kp LA(RIGHT)  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mkp MCLK  &mkp RCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &mkp LCLK  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &mo 5  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -44,7 +44,7 @@
 
         mouse_layer {
             bindings = <
-                &kp F2  &kp F4  &kp F5  &trans  &kp LG(UP)  &trans  &kp HOME  &kp UP  &kp END  &trans  &trans  &trans  &trans  &kp F8  &kp LCTRL  &kp LS(LG(RIGHT))  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(DOWN)  &trans  &kp PG_UP  &trans  &kp PG_DN  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LSHFT  &trans  &trans  &trans  &trans  &trans
+                &kp F2  &kp F4  &kp F5  &kp LG(DOWN)  &kp LG(UP)  &trans  &kp HOME  &kp UP  &kp END  &trans  &trans  &trans  &kp LC(A)  &kp F8  &kp LCTRL  &kp LS(LG(RIGHT))  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans  &trans  &kp LC(S)  &trans  &kp LC(V)  &kp LC(B)  &trans  &kp PG_UP  &trans  &kp PG_DN  &trans  &trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &trans  &trans  &kp LSHFT  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
@@ -56,7 +56,7 @@
 
         layer5_layer {
             bindings = <
-                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LCTRL  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
